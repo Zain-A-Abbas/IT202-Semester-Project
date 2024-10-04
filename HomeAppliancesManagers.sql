@@ -1,3 +1,4 @@
+-- Zain Abbas, 10/4/2024, IT202-MC, Phase 1 Assignment: Login and Logout, zaa24@njit.edu
 CREATE TABLE HomeAppliancesManagers (
     HomeAppliancesManagerID INT(11)         NOT NULL    AUTO_INCREMENT,
     emailAddress            VARCHAR(255)    NOT NULL    UNIQUE,
