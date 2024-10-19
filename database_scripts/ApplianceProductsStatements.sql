@@ -1,3 +1,4 @@
+-- Zain Abbas, 10/18/2024, IT202-MC, Phase 2 Assignment: CRUD Categories and Products, zaa24@njit.edu
 CREATE TABLE HomeApplianceProducts (
  HomeApplianceProductID         INT(11)         NOT NULL,
  HomeApplianceProductCode       VARCHAR(10)     NOT NULL    UNIQUE,
