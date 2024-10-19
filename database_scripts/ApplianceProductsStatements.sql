@@ -10,3 +10,10 @@ CREATE TABLE HomeApplianceProducts (
  DateCreated                    DATETIME        NOT NULL,
  PRIMARY KEY ( HomeApplianceProductID )
 );
+
+SELECT * FROM `HomeApplianceProducts`;
+
+INSERT INTO `HomeApplianceProducts`
+(`HomeApplianceProductID`, `HomeApplianceProductCode`, `HomeApplianceProductName`, `HomeAppliancedescription`, `Color`, `HomeApplianceCategoryID`, `HomeApplianceWholesalePrice`, `HomeApplianceListPrice`, `DateCreated`)
+VALUES
+(1012, 'Ra', 'Ra\'s Air Purifier', 'Placeholder description.', 'AMARANTH', 5, 399.00, 499.00, NOW());

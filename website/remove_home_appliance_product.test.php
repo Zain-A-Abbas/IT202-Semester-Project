@@ -1,14 +1,14 @@
 <?php
 
-include('home_appliance_category.php');
+include('home_appliance_product.php');
 
 $ID = $_GET['ID'];
 if ((trim($ID) == '') or (!is_numeric($ID))) {
     echo "Invalid number.";
 } else {
-    $result = HomeApplianceCategory::deleteCategory($ID);
+    $result = HomeApplianceProduct::deleteProduct($ID);
     if ($result) {
-        echo "Category  succesfully removed.";
+        echo "Product succesfully removed.";
     } else {
         echo "SQL result failed.";
     }

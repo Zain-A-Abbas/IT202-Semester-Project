@@ -1,0 +1,15 @@
+Create Category
+http://localhost:3000/add_home_appliance_categories.test.php?ID=6&CODE=VCM&NAME=Vacuum%20Cleaners&AISLE=6
+Verify Create Category
+http://localhost:3000/list_home_appliance_category.test.php
+
+Update Category
+http://localhost:3000/change_home_appliance_category.test.php?ID=6&CODE=VMC&NAME=Vacuum%20Cleaners&AISLE=6
+Verify Update Category
+http://localhost:3000/list_home_appliance_category.test.php
+
+Renove Category
+http://localhost:3000/remove_home_appliance_category.test.php?ID=6
+Verify Delete Category
+http://localhost:3000/list_home_appliance_category.test.php
+

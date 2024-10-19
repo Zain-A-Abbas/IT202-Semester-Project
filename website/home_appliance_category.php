@@ -1,5 +1,7 @@
 <?php
 
+require_once('database.php');
+
 class HomeApplianceCategory {
     public $HomeApplianceCategoryID;
     public $HomeApplianceCategoryCode;
@@ -7,12 +9,12 @@ class HomeApplianceCategory {
     public $AisleNumber;
     public $DateCreated;
 
-    function __construct($ID, $code, $name, $aisle, $date) {
+    function __construct($ID, $code, $name, $aisle) {
         $this->HomeApplianceCategoryID = $ID;
         $this->HomeApplianceCategoryCode = $code;
         $this->HomeApplianceCategoryName = $name;
         $this->AisleNumber = $aisle;
-        $this->DateCreated = $date;
+        $this->DateCreated = date('Y-m-d H:i:s');;
     }
 
     function insertCategory() {
@@ -33,22 +35,20 @@ class HomeApplianceCategory {
         return $result;
     }
 
-    function updateCategory() {
+    static function updateCategory($code, $name, $aisle, $ID) {
         $db = getDB();
         $query = "UPDATE HomeApplianceCategories SET
         HomeApplianceCategoryCode = ?,
         HomeApplianceCategoryName = ?,
-        AisleNumber = ?,
-        DateCreated = ?
+        AisleNumber = ?
         WHERE HomeApplianceCategoryID = ?;";
         $stmt = $db->prepare($query);
         $stmt->bind_param(
-            "ssisi",
-            $this->HomeApplianceCategoryCode,
-            $this->HomeApplianceCategoryName,
-            $this->AisleNumber,
-            $this->DateCreated,
-            $this->HomeApplianceCategoryID
+            "ssii",
+            $code,
+            $name,
+            $aisle,
+            $ID
         );
     
         $result = $stmt->execute();

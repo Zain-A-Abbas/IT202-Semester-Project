@@ -1,0 +1,15 @@
+Create Product
+http://localhost:3000/add_home_appliance_products.test.php?ID=1050&CODE=HL&NAME=HL%20Fridge&DESC=Placeholder&COLOR=GREY&CATID=1&WHOLEPRICE=50.0&LISTPRICE=60.0
+Verify Create Product
+http://localhost:3000/list_home_appliance_product.test.php
+
+Update Category
+http://localhost:3000/change_home_appliance_product.test.php?CODE=HL&NAME=HL%20Fridge&DESC=Placeholder&COLOR=ORANGE&CATID=1&WHOLEPRICE=50.0&LISTPRICE=80.0&ID=1050
+Verify Update Product
+http://localhost:3000/list_home_appliance_product.test.php
+
+Renove Category
+http://localhost:3000/remove_home_appliance_product.test.php?ID=1050
+Verify Delete Product
+http://localhost:3000/list_home_appliance_product.test.php
+

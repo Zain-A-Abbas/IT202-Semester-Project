@@ -7,6 +7,7 @@ CREATE TABLE HomeApplianceCategories (
  PRIMARY KEY ( HomeApplianceCategoryID )
 );
 
+SELECT * FROM `HomeApplianceCategories`;
 
 INSERT INTO HomeApplianceCategories
 (`HomeApplianceCategoryID`, `HomeApplianceCategoryCode`, `HomeApplianceCategoryName`, `AisleNumber`, `DateCreated`)
@@ -32,3 +33,4 @@ INSERT INTO HomeApplianceCategories
 (`HomeApplianceCategoryID`, `HomeApplianceCategoryCode`, `HomeApplianceCategoryName`, `AisleNumber`, `DateCreated`)
 VALUES
 (5, "ARP", "Air Purifiers", 5, NOW());
+
