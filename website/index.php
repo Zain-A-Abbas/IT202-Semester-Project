@@ -8,12 +8,19 @@ session_start();
 
 <body>
 
+<?php
+include("header.inc.php");
+include("nav.inc.php");
+?>
+
 <section id="container">
     <main>
         <?php
 
         if (isset($_REQUEST['content'])) {
+            ?><br><?php
             include($_REQUEST['content'] . ".inc.php");
+            ?><br><?php
         } else {
             include("main.inc.php");
         }
@@ -21,6 +28,10 @@ session_start();
         ?>
     </main>
 </section>
+
+<?php
+include("footer.inc.php");
+?>
 
 </body>
 
