@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Oct 19, 2024 at 03:41 AM
+-- Generation Time: Nov 02, 2024 at 09:39 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -43,8 +43,9 @@ CREATE TABLE IF NOT EXISTS `HomeApplianceProducts` (
 --
 
 INSERT INTO `HomeApplianceProducts` (`HomeApplianceProductID`, `HomeApplianceProductCode`, `HomeApplianceProductName`, `HomeAppliancedescription`, `Color`, `HomeApplianceCategoryID`, `HomeApplianceWholesalePrice`, `HomeApplianceListPrice`, `DateCreated`) VALUES
+(8, 'i;', 'hljk', 'Yep that is it', 'hjlk', 8, 8.80, 8.00, '2024-11-02 03:54:34'),
 (1000, 'SAM', 'Sam''s Fridge', 'Placeholder description.', 'RED', 1, 399.00, 499.00, '2024-10-18 22:24:54'),
-(1001, 'Dave', 'Dave''s Fridge', 'Placeholder description.', 'GREEN', 1, 399.00, 499.00, '2024-10-18 22:25:38'),
+(1001, 'DAVE', 'David''s Fridge', 'A', 'A', 1, 99.00, 99.00, '2024-10-18 22:25:38'),
 (1002, 'Howard', 'Howard''s Fridge', 'Placeholder description.', 'BLUE', 1, 399.00, 499.00, '2024-10-18 22:25:39'),
 (1003, 'Adam', 'Adam''s Washer', 'Placeholder description.', 'RED', 2, 399.00, 499.00, '2024-10-18 22:27:32'),
 (1004, 'Farasyn', 'Farasyn''s Washer', 'Placeholder description.', 'GREEN', 2, 399.00, 499.00, '2024-10-18 22:27:35'),
@@ -57,7 +58,8 @@ INSERT INTO `HomeApplianceProducts` (`HomeApplianceProductID`, `HomeAppliancePro
 (1011, 'East', 'East''s Coffee Maker', 'Placeholder description.', 'BLUE', 4, 399.00, 499.00, '2024-10-18 22:31:16'),
 (1012, 'Ra', 'Ra''s Air Purifier', 'Placeholder description.', 'AMARANTH', 5, 399.00, 499.00, '2024-10-18 22:33:34'),
 (1013, 'Temu', 'Temu''s Air Purifier', 'Placeholder description.', 'WENGE', 5, 399.00, 499.00, '2024-10-18 22:33:35'),
-(1014, 'Yippee', 'Yippee''s Air Purifier', 'Placeholder description.', 'SARCOLINE', 5, 399.00, 499.00, '2024-10-18 22:33:37');
+(1014, 'Yippee', 'Yippee''s Air Purifier', 'Placeholder description.', 'SARCOLINE', 5, 399.00, 499.00, '2024-10-18 22:33:37'),
+(1201, 'JRDTR', 'Jenna''s Radiator', 'A radiator.', 'RED', 13, 78.99, 99.99, '2024-11-02 05:24:24');
 
 --
 -- Indexes for dumped tables

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: sql1.njit.edu
--- Generation Time: Oct 19, 2024 at 03:41 AM
+-- Generation Time: Nov 02, 2024 at 09:39 AM
 -- Server version: 8.0.17
 -- PHP Version: 7.4.8
 
@@ -43,7 +43,11 @@ INSERT INTO `HomeApplianceCategories` (`HomeApplianceCategoryID`, `HomeAppliance
 (2, 'WSM', 'Washing Machines', 2, '2024-10-18 18:42:31'),
 (3, 'MCR', 'Microwave Ovens', 3, '2024-10-18 18:42:32'),
 (4, 'CFM', 'Coffee Makers', 4, '2024-10-18 18:42:40'),
-(5, 'ARP', 'Air Purifiers', 5, '2024-10-18 18:42:42');
+(5, 'ARP', 'Air Purifiers', 5, '2024-10-18 18:42:42'),
+(10, 'FAN', 'Fan', 10, '2024-11-02 04:21:38'),
+(12, 'BLN', 'Blenders', 12, '2024-11-02 04:39:49'),
+(13, 'RDT', 'Radiators', 13, '2024-11-02 05:22:21'),
+(60, 'AC', 'Waha', 3, '2024-11-02 03:45:11');
 
 --
 -- Indexes for dumped tables

@@ -1,4 +1,4 @@
-<form action="/change_home_appliance_products.inc.php" method="POST">
+<form action="index.php?content=change_home_appliance_product" method="POST">
     <table>
         <tr>
             <td><label for="ID">Product ID:</label></td>

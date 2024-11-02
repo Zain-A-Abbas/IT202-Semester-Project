@@ -8,6 +8,7 @@
     <li><a href="index.php?content=new_home_appliance_category">Add New Category</a></li>
     <li><a href="index.php?content=list_home_appliance_product">List Products</a></li>
     <li><a href="index.php?content=new_home_appliance_product">Add New Product</a></li>
+    <li><a href="index.php?content=update_home_appliance_product">Update Product</a></li>
     <li><a href="index.php?content=logout">Logout</a></li>
 </ul>    
 Search for Product
