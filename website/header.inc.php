@@ -1,4 +1,8 @@
 <!DOCTYPE html>
-<h1>Home Appliance Store</h1>
+<head>
+<link rel="stylesheet" href="ApplianceStore.css">
+</head>
+<img src="images/banner.png" alt="banner">
+<br>
 This website is a store for Home Appliances such as fridges, microwaves, etc.
 <hr>

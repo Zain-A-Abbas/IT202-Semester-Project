@@ -4,17 +4,20 @@
 include('home_appliance_product.php');
 
 if (isset($_SESSION['login'])) {    
-    $ID = $_POST['ID'];
+    $ID = filter_input(INPUT_POST, 'ID', FILTER_VALIDATE_INT);
     if ((trim($ID) == '') or (!is_numeric($ID))) {
-        echo "Invalid number.";
+        echo "Invalid ID.";
     } else {
-        $code = $_POST['CODE'];
-        $name = $_POST['NAME'];
-        $desc = $_POST['DESC'];
-        $color = $_POST['COLOR'];
+        $code = htmlspecialchars($_POST['CODE']);
+        $name = htmlspecialchars($_POST['NAME']);
+        $desc = htmlspecialchars($_POST['DESC']);
+        $color = htmlspecialchars($_POST['COLOR']);
         $catid = $_POST['CATID'];
         $whole = $_POST['WHOLEPRICE'];
         $list = $_POST['LISTPRICE'];
+        if (!is_int($catid) || !is_float($whole) || !is_float($list)) {
+            echo "<h2>Non-numeric values for ID/price.</h2>\n";
+        }
         $product = new HomeApplianceProduct($ID, $code, $name, $desc, $color, $catid, $whole, $list);
         $result = $product->insertProduct();
         if ($result) {

@@ -1,0 +1,32 @@
+    /* Zain Abbas, 11/18/2024, IT202-MC, Phase 4 Assignment: Input Filtering and CSS Styling, zaa24@njit.edu */
+    main {
+        font-family: 'Arial';
+        background-color: #072466;
+        margin: 0 auto;
+        width: 550px;
+        border: 3px solid #000A22;
+        padding: 1em 2em;
+     }
+     body {
+        font-family: 'Arial';
+        color: #CDCDCD;
+        background-color: #2E4172;
+     }
+     h1 {
+        color: #CDCDCD;
+        margin-top: 0;
+     }
+     div {
+        margin-bottom: 0.5em;
+     }
+     label {
+        float: left;
+        width: 16em;
+        text-align: right;
+     }
+     input {
+        margin-left: 1em;
+     }
+     #calculate {
+        margin-bottom: 1em;
+     }

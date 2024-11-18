@@ -9,7 +9,6 @@ if ((trim($ID) == '') or (!is_numeric($ID))) {
     $code = $_GET['CODE'];
     $name = $_GET['NAME'];
     $aisle = $_GET['AISLE'];
-    $date = $_GET['DATE'];
     $result = HomeApplianceCategory::updateCategory($code, $name, $aisle, $ID);
     if ($result) {
         echo "Category $name succesfully updated.";

@@ -4,19 +4,19 @@
     <table>
         <tr>
             <td><label for="ID">Category ID:</label></td>
-            <td><input type="number" id="ID" name="ID" min="1" required></td>
+            <td><input type="number" id="ID" name="ID" min="1" required minlength="1" maxlength="10"></td>
         </tr>
         <tr>
             <td><label for="CODE">Category Code:</label></td>
-            <td><input type="text" id="CODE" name="CODE" required></td>
+            <td><input type="text" id="CODE" name="CODE" required minlength="3" maxlength="10"></td>
         </tr>
         <tr>
             <td><label for="NAME">Category Name:</label></td>
-            <td><input type="text" id="NAME" name="NAME" required></td>
+            <td><input type="text" id="NAME" name="NAME" required minlength="5" maxlength="100"></td>
         </tr>
         <tr>
             <td><label for="AISLE">Category Aisle:</label></td>
-            <td><input type="number" id="AISLE" name="AISLE" min="1" required></td>
+            <td><input type="number" id="AISLE" name="AISLE" min="1" required minlength="3" maxlength="10"></td>
         </tr>
 
         <tr>

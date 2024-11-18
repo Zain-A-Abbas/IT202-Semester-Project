@@ -7,10 +7,10 @@ if (isset($_SESSION['login'])) {
     if ((trim($ID) == '') or (!is_numeric($ID))) {
         echo "Invalid number.";
     } else {
-        $code = $_POST['CODE'];
-        $name = $_POST['NAME'];
-        $desc = $_POST['DESC'];
-        $color = $_POST['COLOR'];
+        $code = htmlspecialchars($_POST['CODE']);
+        $name = htmlspecialchars($_POST['NAME']);
+        $desc = htmlspecialchars($_POST['DESC']);
+        $color = htmlspecialchars($_POST['COLOR']);
         $catid = $_POST['CATID'];
         $whole = $_POST['WHOLEPRICE'];
         $list = $_POST['LISTPRICE'];
