@@ -1,13 +1,14 @@
 <?php
 
+
+include('home_appliance_category.php');
+
 require_once('database.php');
-$db = getDB();
-$query = "SELECT * FROM HomeApplianceCategories;";
-$stmt = $db->prepare($query);
-$stmt->execute();
-$result = $stmt->get_result();
-$db->close();
-while ($data = $result->fetch_assoc()) {
-    echo $data['HomeApplianceCategoryID'] . ": " . $data['HomeApplianceCategoryCode'] . " - " . $data['HomeApplianceCategoryName'] . "<br>";
+$categories = HomeApplianceCategory::getCategories();
+echo "<h2>Categories</h2>";
+foreach ($categories as $category) {
+    $categoryID = $category->$HomeApplianceCategoryID;
+    $name = $HomeApplianceCategoryID . " - " . $category->HomeApplianceCategoryCode . ", " . $category->HomeApplianceCategoryName ;
+    echo "<option value=\"$categoryID\">$name</option>\n";
 }
 ?>

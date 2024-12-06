@@ -18,7 +18,7 @@ include("nav.inc.php");
         <?php
 
         if (isset($_REQUEST['content'])) {
-            ?><br><?php
+            ?><?php
             include($_REQUEST['content'] . ".inc.php");
             ?><br><?php
         } else {

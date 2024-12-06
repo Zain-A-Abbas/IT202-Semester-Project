@@ -71,6 +71,16 @@ class HomeApplianceCategory {
 
     }
 
+    static function getCategories() {
+        $db = getDB();
+        $query = "SELECT * FROM HomeApplianceCategories;";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $db->close();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 
 

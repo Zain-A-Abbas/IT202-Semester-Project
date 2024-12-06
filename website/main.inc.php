@@ -19,7 +19,6 @@ if (!isset($_SESSION['login'])) {
 } else {
    echo "<h2>Welcome to Inventory Helper, {$_SESSION['firstName']} {$_SESSION['lastName']}</h2>";
 ?>
-   <br><br>
    <p>This program tracks category and item inventory</p>
    <p>Please use the links in the navigation window</p>
    <p>Please DO NOT use the browser navigation buttons!</p>
