@@ -1,14 +1,15 @@
-<?php
-
-require_once('database.php');
-$db = getDB();
-$query = "SELECT * FROM HomeApplianceProducts;";
-$stmt = $db->prepare($query);
-$stmt->execute();
-$result = $stmt->get_result();
-$db->close();
-//print_r($data);
-while ($data = $result->fetch_assoc()) {
-    echo $data['HomeApplianceProductID'] . ": " . $data['HomeApplianceProductCode'] . " - " . $data['HomeApplianceProductName'] . " - " . $data['HomeApplianceListPrice'] . "<br>";
-}
-?>
+<!--Zain Abbas, 12/06/2024, IT202-MC, Phase 5 Assignment: Javascript, zaa24@njit.edu-->
+<h2>Select Item</h2>
+<form name="products" method="post">
+<select name="productID" size="20">
+    <?php
+        $products = HomeApplianceProduct::getProducts();
+        foreach ($products as $product) {
+            $productID = $product->HomeApplianceProductID;
+            $productName = $product->HomeApplianceProductName;
+            $option = $productID . " - " . $productName;
+            echo "<option value=\"$productID\">$option</option>\n";
+        }
+    ?>
+</select>
+</form>

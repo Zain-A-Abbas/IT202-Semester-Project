@@ -36,40 +36,56 @@ class HomeApplianceCategory {
         return $result;
     }
 
-    static function updateCategory($code, $name, $aisle, $ID) {
+    function updateCategory()
+    {
         $db = getDB();
-        $query = "UPDATE HomeApplianceCategories SET
-        HomeApplianceCategoryCode = ?,
-        HomeApplianceCategoryName = ?,
-        AisleNumber = ?
-        WHERE HomeApplianceCategoryID = ?;";
+        $query = "UPDATE HomeApplianceCategories SET HomeApplianceCategoryCode = ?, HomeApplianceCategoryCode = ?, " .
+            "HomeApplianceCategoryName = ? " .
+            "WHERE HomeApplianceCategoryID = $this->HomeApplianceCategoryID";
         $stmt = $db->prepare($query);
         $stmt->bind_param(
-            "ssii",
-            $code,
-            $name,
-            $aisle,
-            $ID
+            "iss",
+            $this->HomeApplianceCategoryID,
+            $this->HomeApplianceCategoryCode,
+            $this->HomeApplianceCategoryName
         );
-    
         $result = $stmt->execute();
         $db->close();
         return $result;
     }
 
-    static function deleteCategory($deleteID) {
+
+    static function findCategory($categoryID)
+    {
         $db = getDB();
-        $query = "DELETE FROM HomeApplianceCategories WHERE HomeApplianceCategoryID = ?;";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param(
-            "i",
-            $deleteID
-        );
-        $result = $stmt->execute();
+        $query = "SELECT * FROM HomeApplianceCategories WHERE HomeApplianceCategoryID = $categoryID";
+        $result = $db->query($query);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        if ($row) {
+            $category = new HomeApplianceCategory(
+                $row['HomeApplianceCategoryID'],
+                $row['HomeApplianceCategoryCode'],
+                $row['HomeApplianceCategoryName'],
+                $row['AisleNumber']
+            );
+            $db->close();
+            return $category;
+        } else {
+            $db->close();
+            return NULL;
+        }
+    }
+ 
+
+    function removeCategory()
+    {
+        $db = getDB();
+        $query = "DELETE FROM HomeApplianceCategories WHERE HomeApplianceCategoryID = $this->HomeApplianceCategoryID";
+        $result = $db->query($query);
         $db->close();
         return $result;
-
     }
+ 
 
     static function getCategories() {
         $db = getDB();
@@ -78,8 +94,26 @@ class HomeApplianceCategory {
         $stmt->execute();
         $result = $stmt->get_result();
         $db->close();
-        return $result->fetch_all(MYSQLI_ASSOC);
+        
+        $categories = [];
+        while ($data = $result->fetch_object()) {
+            $categories[] = $data;
+        }
+        return $categories;
     }
+
+    static function getTotalCategories() {
+        $db = getDB();
+        $query = "SELECT count(HomeApplianceCategoryID) FROM HomeApplianceCategories";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
+
 
 }
 

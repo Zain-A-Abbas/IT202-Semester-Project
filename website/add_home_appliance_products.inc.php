@@ -1,7 +1,7 @@
 <?php
 
 # Zain Abbas, 11/02/2024, IT202-MC, Phase 3 Assignment: HTML Website Layout, zaa24@njit.edu
-include('home_appliance_product.php');
+//include('home_appliance_product.php');
 
 if (isset($_SESSION['login'])) {    
     $ID = filter_input(INPUT_POST, 'ID', FILTER_VALIDATE_INT);
@@ -15,9 +15,9 @@ if (isset($_SESSION['login'])) {
         $catid = $_POST['CATID'];
         $whole = $_POST['WHOLEPRICE'];
         $list = $_POST['LISTPRICE'];
-        if (!is_int($catid) || !is_float($whole) || !is_float($list)) {
-            echo "<h2>Non-numeric values for ID/price.</h2>\n";
-        }
+        //if (!is_int($catid) && !is_float($whole) && !is_float($list)) {
+          //  echo "<h2>Non-numeric values for ID/price.</h2>\n";
+        //}
         $product = new HomeApplianceProduct($ID, $code, $name, $desc, $color, $catid, $whole, $list);
         $result = $product->insertProduct();
         if ($result) {

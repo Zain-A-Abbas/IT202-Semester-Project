@@ -91,6 +91,47 @@ class HomeApplianceProduct {
 
     }
 
+    static function getProducts() {
+        $db = getDB();
+        $query = "SELECT * FROM HomeApplianceProducts;";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $db->close();
+        
+        $products = [];
+        while ($data = $result->fetch_object()) {
+            $products[] = $data;
+        }
+        return $products;
+    }
+
+    static function getTotalItems()
+    {
+        $db = getDB();
+        $query = "SELECT count(HomeApplianceProductID) FROM HomeApplianceProducts";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
+    static function getTotalListPrice()
+    {
+        $db = getDB();
+        $query = "SELECT sum(HomeApplianceListPrice) FROM HomeApplianceProducts";
+        $result = $db->query($query);
+        $row = $result->fetch_array();
+        if ($row) {
+            return $row[0];
+        } else {
+            return NULL;
+        }
+    }
+
+
 }
 
 

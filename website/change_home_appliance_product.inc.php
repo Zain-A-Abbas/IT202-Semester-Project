@@ -1,6 +1,6 @@
 <?php
 # Zain Abbas, 10/18/2024, IT202-MC, Phase 2 Assignment: CRUD Categories and Products, zaa24@njit.edu
-include('home_appliance_product.php');
+//include('home_appliance_product.php');
 
 if (isset($_SESSION['login'])) {    
     $ID = $_POST['ID'];

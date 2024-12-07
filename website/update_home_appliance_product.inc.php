@@ -1,3 +1,4 @@
+<!--Zain Abbas, 12/06/2024, IT202-MC, Phase 5 Assignment: Javascript, zaa24@njit.edu-->
 <form action="index.php?content=change_home_appliance_product" method="POST">
     <table>
     <tr>
